@@ -1,0 +1,46 @@
+/* Color palette (School Canvas) sourced from https://www.color-hex.com/color-palette/113018 */
+:root {
+    --first: #f07373;
+    --second: #eca55d;
+    --third: #abce9d;
+    --fourth: #81afcc;
+    --fifth: #e0b9e5;
+    --black: #000000;
+    --border-radius: 0.3rem;
+}
+
+body {
+    font-family: Arial;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: flex-start;
+    background-color: var(--quatrinary);
+}
+
+a {
+    color: var(--dark);
+    text-decoration: none;
+}
+
+header {
+    padding: 40px;
+    text-align: center;
+    background: var(--primary);
+    color: var(--light);
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+/* LAYOUT */
+.container {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: flex-start;
+    align-items: center;
+}
