@@ -1,0 +1,8 @@
+<section class="container">
+  <h3 class="blogger-name">{{blogger.username}}</h3>
+  <section class="flex-row justify-center">
+    {{#each blogger.blogposts as |blogpost|}}
+    {{> blogpost-details}}
+    {{/each}}
+  </section>
+</section>

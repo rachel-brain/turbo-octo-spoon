@@ -56,6 +56,19 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 
 
 
+## Installation
+- npm install
+- npm install dotenv
+- npm install --save sequelize
+- npm install --save mysql2
+- npm install express
+- npm install express-handlebars
+- npm install bcrypt
+- npm run seed
+- npm start
+
+
+
 
 ## License
 MIT

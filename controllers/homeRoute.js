@@ -64,7 +64,7 @@ router.get('/blogger/:id', async (req, res) => {
     if (!req.session.loggedIn) {
         res.redirect('/login');
     } else {
-        // If the user is logged in, allow them to view the painting
+        // If the user is logged in, allow them to view the single blog
         try {
             const blogpost = dbBlogpostData.get({
                 plain: true

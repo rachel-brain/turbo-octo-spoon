@@ -1,22 +1,21 @@
-{{!-- RE-DO!!! --}}
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Museum</title>
-  <link rel="stylesheet" type="text/css" href="/css/jass.css">
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <title>The Tech Blog</title>
+  <link rel="stylesheet" type="text/css" href="/public/css/jass.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/style.css">
 </head>
 
 <body>
   <header>
-    <h1>Welcome to the Four Seasons Museum</h1>
+    <h1>The Tech Blog</h1>
   </header>
   <nav>
     <a href="/">Home</a>
+     <a href="/">Dashboard</a>
     {{#if loggedIn}}
     <button id="logout" class="btn-no-style">Logout</button>
     {{else}}
@@ -24,15 +23,12 @@
     {{/if}}
   </nav>
   <main>
-    <aside>
-      <h2>Enjoy the galleries!</h2>
-    </aside>
-    <div class="gallery">
+    <div class="container container-fluid mt-5 input">
       {{{body}}}
     </div>
   </main>
   {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
+  <script src="/public/js/logout.js"></script>
   {{/if}}
 </body>
 
