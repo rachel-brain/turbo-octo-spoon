@@ -21,8 +21,8 @@ router.get('/', async (req, res) => {
         );
 
         res.render('homepage', {
-            blogposts,
-            loggedIn: req.session.loggedIn,
+            blogs,
+            // loggedIn: req.session.loggedIn,
         });
     } catch (err) {
         console.log(err);
@@ -31,7 +31,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET one blogpost by id
-router.get('/blogposts/:id', async (req, res) => {
+router.get('/blogpost/:id', async (req, res) => {
     // If the user is not logged in, redirect the user to the login page
     if (!req.session.loggedIn) {
         res.redirect('/login');
@@ -49,7 +49,7 @@ router.get('/blogposts/:id', async (req, res) => {
             });
             res.render('blogpost', {
                 blogpost,
-                loggedIn: req.session.loggedIn
+                // loggedIn: req.session.loggedIn
             });
         } catch (err) {
             console.log(err);
@@ -71,7 +71,7 @@ router.get('/blogger/:id', async (req, res) => {
             });
             res.render('blogpost', {
                 blogpost,
-                loggedIn: req.session.loggedIn
+                // loggedIn: req.session.loggedIn
             });
         } catch (err) {
             console.log(err);

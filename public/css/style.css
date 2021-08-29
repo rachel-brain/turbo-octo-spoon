@@ -19,11 +19,6 @@ body {
     background-color: var(--quatrinary);
 }
 
-a {
-    color: var(--dark);
-    text-decoration: none;
-}
-
 header {
     padding: 40px;
     text-align: center;
@@ -36,6 +31,37 @@ main {
     flex-wrap: wrap;
     flex-grow: 1;
 }
+
+h1 {
+    font-size: 30px;
+    color: var(--first);
+}
+
+h2 {
+    font-size: 25px;
+    color: var(--second);
+}
+
+h3 {
+    font-size: 20px;
+    color: var(--third);
+}
+
+p {
+    font-size: 15px;
+    color: var(--fourth);
+}
+
+a {
+    font-size: 20px;
+    color: var(--fifth);
+    text-decoration: none;
+}
+
+
+
+
+
 
 /* LAYOUT */
 .container {
