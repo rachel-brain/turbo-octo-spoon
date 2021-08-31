@@ -22,6 +22,13 @@ Blogpost.init({
         allowNull: false,
         unique: true,
 
+    },
+    blogger_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'blogger',
+            key: 'id',
+        },
     }
 }, {
     sequelize,

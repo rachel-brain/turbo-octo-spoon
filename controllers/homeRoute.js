@@ -3,6 +3,7 @@ const {
     Blogpost,
     Blogger
 } = require('../models');
+const withAuth = require('../utils/auth');
 
 // GET all blogposts for homepage
 router.get('/', async (req, res) => {
@@ -14,16 +15,17 @@ router.get('/', async (req, res) => {
             }, ],
         });
 
-        const blogs = dbBlogpostData.map((blogpost) =>
+        const blogposts = dbBlogpostData.map((blogpost) =>
             blogpost.get({
                 plain: true
             })
         );
+        console.log("blogposts: ", blogposts);
 
         res.render('homepage', {
-            blogs,
-            // loggedIn: req.session.loggedIn,
+            blogposts
         });
+
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -44,12 +46,15 @@ router.get('/blogpost/:id', async (req, res) => {
                     attributes: ['id', 'username']
                 }, ],
             });
+
+            console.log("blogpost: ", dbBlogpostData);
+
             const blogpost = dbBlogpostData.get({
                 plain: true
             });
             res.render('blogpost', {
                 blogpost,
-                // loggedIn: req.session.loggedIn
+                // loggedIn: req.session.loggedIn, PUT THIS ON THE HANDLEBARS PAGES
             });
         } catch (err) {
             console.log(err);
@@ -69,9 +74,12 @@ router.get('/blogger/:id', async (req, res) => {
             const blogpost = dbBlogpostData.get({
                 plain: true
             });
+
+            console.log("blogpost: ", dbBlogpostData);
+
             res.render('blogpost', {
                 blogpost,
-                // loggedIn: req.session.loggedIn
+                // loggedIn: req.session.loggedIn, PUT THIS ON THE HANDLEBARS PAGES
             });
         } catch (err) {
             console.log(err);

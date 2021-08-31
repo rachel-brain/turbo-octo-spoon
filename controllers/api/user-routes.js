@@ -3,7 +3,7 @@ const {
     Blogger
 } = require('../../models');
 
-// CREATE new blogger/user
+// CREATE new blogger
 router.post('/', async (req, res) => {
     try {
         const dbUserData = await Blogger.create({
@@ -12,11 +12,14 @@ router.post('/', async (req, res) => {
             password: req.body.password,
         });
 
-        req.session.save(() => {
-            req.session.loggedIn = true;
+        console.log("newBlogger: ", dbUserData);
 
+        req.session.save(() => {
+            req.session.blogger_id = dbUserData.id;
+            req.session.loggedIn = true;
             res.status(200).json(dbUserData);
         });
+
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -53,12 +56,13 @@ router.post('/login', async (req, res) => {
         }
 
         req.session.save(() => {
+            req.session.blogger_id = dbUserData.id;
             req.session.loggedIn = true;
 
             res
                 .status(200)
                 .json({
-                    user: dbUserData,
+                    blogger: dbUserData,
                     message: 'You are now logged in!'
                 });
         });

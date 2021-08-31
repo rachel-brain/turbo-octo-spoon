@@ -1,3 +1,15 @@
-{{#each blogposts as |blogpost|}}
-{{> blogpost-details}}
+{{!-- DONE --}}
+
+<!-- Loop over each object in the projects array -->
+{{!-- IF LOGGED IN .... --}}
+{{#each blogposts as |blogpost| }}
+<div class="row">
+    <div class="column">
+        <p>{{blogpost.title}}</p> 
+        <p>{{blogpost.content}}</p>
+        {{!-- <p>Created by {{blogpost.username}} on {{format_date blogpost.date_created}}</p> --}}
+        <br>
+    </div>
+  </div>
+
 {{/each}}

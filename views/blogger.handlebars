@@ -1,8 +1,46 @@
-<section class="container">
-  <h3 class="blogger-name">{{blogger.username}}</h3>
-  <section class="flex-row justify-center">
-    {{#each blogger.blogposts as |blogpost|}}
-    {{> blogpost-details}}
+{{!-- DONE --}}
+
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{username}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New Post:</h3>
+
+    <form class="form new-post-form">
+      <div class="form-group">
+        <label for="post-title">Title:</label>
+        <input class="form-input" type="text" id="post-title" name="post-title" />
+      </div>
+      <div class="form-group">
+        <label for="post-content">Content:</label>
+        <input class="form-input" type="text" id="post-content" name="post-content" />
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if blogposts.length}}
+  <div class="col-md-6 blogpost-list">
+    <h3>Blogposts:</h3>
+
+    {{#each blogposts as |blogpost|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/blogpost/{{blogpost.id}}">{{blogpost.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{blogpost.id}}">DELETE</button>
+      </div>
+    </div>
     {{/each}}
-  </section>
-</section>
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>
