@@ -6,7 +6,7 @@ const {
 const withAuth = require('../utils/auth');
 
 // GET all blogposts for homepage
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const dbBlogpostData = await Blogpost.findAll({
             include: [{
@@ -23,7 +23,8 @@ router.get('/', async (req, res) => {
         console.log("blogposts: ", blogposts);
 
         res.render('homepage', {
-            blogposts
+            blogposts,
+            loggedIn: req.session.loggedIn,
         });
 
     } catch (err) {

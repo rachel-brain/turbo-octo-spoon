@@ -24,6 +24,8 @@ const bloggerdata = [{
     },
 ];
 
-const seedBlogger = () => Blogger.bulkCreate(bloggerdata);
+const seedBlogger = () => Blogger.bulkCreate(bloggerdata, {
+    individualHooks: true
+});
 
 module.exports = seedBlogger;

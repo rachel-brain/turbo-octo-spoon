@@ -16,14 +16,14 @@ body {
     flex-direction: column;
     min-height: 100vh;
     justify-content: flex-start;
-    background-color: var(--quatrinary);
+    background-color: var(--fourth);
 }
 
 header {
     padding: 40px;
     text-align: center;
-    background: var(--primary);
-    color: var(--light);
+    background: var(--first);
+    color: var(--fifth);
 }
 
 main {
@@ -58,6 +58,33 @@ a {
     text-decoration: none;
 }
 
+#post-title,
+#post-content {
+    background-color: var(--third);
+    color: var(--second);
+    border: 5px solid var(--black);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.btn {
+    background-color: var(--first);
+    color: var(--fourth);
+    border: 5px solid var(--black);
+    ;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.btn:hover {
+    color: var(--second);
+    text-decoration: underline;
+}
+
+
+
 
 
 
@@ -68,5 +95,5 @@ a {
     display: flex;
     flex-flow: column wrap;
     align-content: flex-start;
-    align-items: center;
+    align-items: left;
 }
