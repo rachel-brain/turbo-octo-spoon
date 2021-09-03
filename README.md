@@ -1,11 +1,13 @@
 # turbo-octo-spoon
-A CMS-style blog site where developers can publish their tech blog posts and comment on other developers’ posts, this site has been built from scratch and deployed to Heroku.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-
-
+## Description
+A CMS-style blog site where developers can publish their tech blog posts and comment on other developers’ posts, this site has been built from scratch and deployed to Heroku.
+    
+## Motivation
+To build an app from scratch with register and login capability allowing developers to publish, view and comment on tech blogs.
 
 ## User Story
 
@@ -53,26 +55,21 @@ WHEN I am idle on the site for more than a set time
 THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 ```
 
-
-
-
 ## Installation
-- npm install
-- npm install dotenv
-- npm install --save sequelize
-- npm install --save mysql2
-- npm install express
-- npm install express-handlebars
-- npm install bcrypt
-- npm run seed
-- npm start
+For building this website, the following modules are required:
+- dotenv
+- sequelize
+- mysql2
+- express
+- express-handlebars
+- sessions
+- bcrypt
 
+## Screenshot
+![Screenshot of sign-up/login page is shown.](./public/images/login-page-screenshot.JPG)
 
+## Deployment on Heroku
+https://infinite-tundra-08423.herokuapp.com
 
-
-
-## Heroku
-
-
-## GitHub Url
+## URL of GitHub repository
 https://github.com/rachel-brain/turbo-octo-spoon
